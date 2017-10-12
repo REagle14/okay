@@ -11,8 +11,8 @@ COPY . /root/okay
 
 WORKDIR /root/okay/
 
-RUN npm install
-RUN npm install -g webpack-dev-server
+RUN npm install --silent
+RUN npm install -g webpack-dev-server --silent
 
 ENV API_HOST api
 
