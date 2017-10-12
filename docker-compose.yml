@@ -22,7 +22,7 @@ services:
       - ./:/root/okay
       - node_modules:/root/okay/node_modules
     ports:
-      - 8084:8084
+      - 8080:8080
     #restart: always
     depends_on:
       - web
