@@ -60,7 +60,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-// listen on port 3000
-app.listen(8082, function () {
-  console.log('Express app listening on port 8082');
+// listen on port 8080
+app.listen(8080, function () {
+  console.log('Express app listening on port 8080');
 });
