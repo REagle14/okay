@@ -3,7 +3,6 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: path.resolve(__dirname, 'src/app/app.js'),
     output: {
         path: path.resolve(__dirname, 'build'),
         chunkFilename: '[id].bundle.js',
@@ -41,13 +40,13 @@ module.exports = {
         failOnHint: false
     },
     entry: {
-        app: ['app.js'],
+        app: path.resolve(__dirname, 'src/app/app.js'),
         vendor: [
             'jquery',
             'lodash',
             'bootstrap',
             'angular',
-            'angular-ui-router',
+            '@uirouter/angularjs',
             'angular-messages',
             'angular-material'
         ],
@@ -77,13 +76,13 @@ module.exports = {
         },
         host: '0.0.0.0',
         //public: 'http://192.168.86.46:8080',
-        port: 8080,
+        port: 80,
         inline: true,
         outputPath: 'build/',
         contentBase: 'build/',
         disableHostCheck: true,
         proxy: {
-            '*': 'http://0.0.0.0:8082'
+            '*': 'http://api:8080'
         }
     }
 };
