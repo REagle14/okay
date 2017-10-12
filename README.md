@@ -7,8 +7,10 @@ Building an Application with built-in Authentication, using Node, MongoDB, and J
 
 ### In order to start your mongodb server run:
 `docker`
+you can download it from here. https://store.docker.com/search?type=edition&offering=community
 
-## Setup your node Application.
+## Setup your node Application. 
+*note* Make sure you run these commands under the root of the application.
 
 ### To start and run your environment:
 `docker-compose up`
@@ -18,3 +20,6 @@ Building an Application with built-in Authentication, using Node, MongoDB, and J
 
 ### To remove the Docker Environment:
 `docker-compose down`
+
+### To access the application
+open up your browser and navigate to http://localhost okay?
