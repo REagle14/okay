@@ -2,11 +2,7 @@
 Building an Application with built-in Authentication, using Node, MongoDB, and JavaScript okay?
 
 ## Requirements:
-	- mongodb
-	- nodejs
-
-### In order to start your mongodb server run:
-`docker`
+	- docker
 you can download it from here. https://store.docker.com/search?type=edition&offering=community
 
 ## Setup your node Application. 
