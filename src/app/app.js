@@ -1,10 +1,16 @@
 // import Common from './common/common';
+import Components from './components/components';
 import AppComponent from './app.component';
+import Pages from './pages/pages';
+import UserService from './user/user.service';
 
 angular.module('app', [
 	'ngMaterial',
 	'ngMessages',
-	'ui.router'
+	'ui.router',
+	// Common,
+	Components,
+	Pages
 ])
 	.config(($locationProvider, $mdThemingProvider, $httpProvider) => {
 		"ngInject";
@@ -17,7 +23,8 @@ angular.module('app', [
 	})
 
 	.component('app', AppComponent)
-	.run(($location, $rootScope, $state, $timeout) => {
+	.service('userService', UserService)
+	.run(($location, $rootScope, $state, $timeout, userService) => {
 		// enumerate routes that don't need authentication
 		let routesThatDontRequireAuth = ['/login', '/register'];
 		let routesAfterInitialSignup = ['/login'];
@@ -35,6 +42,22 @@ angular.module('app', [
 		};
 
 		$rootScope.$on("$locationChangeStart", (event) => {
+
+			userService.checkInitialRegistration().then(() => {
+				if (userService.isRegistered) {
+					userService.checkLogin().then((user) => {
+						if (routeIsClean($location.url(), routesAfterInitialSignup) && user) {
+							event.preventDefault();
+							$state.go('dashboard');
+						} else if (!routeIsClean($location.url(), routesAfterInitialSignup) && !user) {
+							event.preventDefault();
+							$state.go('login');
+						}
+					});
+				} else {
+					$state.go('register');
+				}
+			});
 
 		});
 	});
