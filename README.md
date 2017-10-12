@@ -6,15 +6,15 @@ Building an Application with built-in Authentication, using Node, MongoDB, and J
 	- nodejs
 
 ### In order to start your mongodb server run:
-`mongod`
+`docker`
 
 ## Setup your node Application.
 
-### To install and run:
-`npm install`
+### To start and run your environment:
+`docker-compose up`
 
-### Run Front End Code
-`npm run start`
+### To Stop your environment:
+`docker-compose stop`
 
-### Run Back End Code
-`npm run start-be`
+### To remove the Docker Environment:
+`docker-compose down`

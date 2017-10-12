@@ -4,7 +4,8 @@
   "description": "Building an Application with built-in Authentication, using Node, MongoDB, JavaScript okay?",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --hot",
+    "start-be": "node ./src/service/app.js"
   },
   "repository": {
     "type": "git",

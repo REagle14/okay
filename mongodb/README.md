@@ -1,0 +1,1 @@
+Temp folder for mongodb so you don't lose your data.
