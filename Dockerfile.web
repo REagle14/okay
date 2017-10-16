@@ -12,6 +12,7 @@ COPY . /root/okay
 WORKDIR /root/okay/
 
 RUN npm install -g webpack-dev-server yarn --silent
+
 RUN yarn install
 
 ENV API_HOST api
