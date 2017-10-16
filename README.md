@@ -20,5 +20,8 @@ you can download it from here. https://store.docker.com/search?type=edition&offe
 ### To remove the Docker Environment:
 `docker-compose down`
 
+### See a list of docker containers running:
+`docker ps -a`
+
 ### To access the application
 open up your browser and navigate to http://localhost okay?
