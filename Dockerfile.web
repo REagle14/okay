@@ -14,8 +14,6 @@ WORKDIR /root/okay/
 RUN npm install -g webpack-dev-server yarn --silent
 RUN yarn install
 
-RUN yarn autoclean
-
 ENV API_HOST api
 
 EXPOSE 80
