@@ -15,9 +15,8 @@ module.exports = {
 			{ test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'] },
 			{ test: /\.html$/, loader: 'html', query: { minimize: false } },
 			{ test: /\.json$/, loaders: ['json-loader'] },
-			{ test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader' },
-			{ test: /\.(jpeg|jpg|tff|otf|eot|svg|woff|woff2)(\?v=[0-9]\.[0-9])$/, loaders: ['file-loader'] },
-			{ test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif)(\?\S*)?$/, loader: 'url?limit=100000&name=[name].[ext]'}
+			{ test: /\.(eot|jpe?g|png|woff|woff2|eot|ttf|gif|svg)(\?v=[0-9]\.[0-9]\.[0-9])$/, loader: 'url-loader' },
+			{ test: /\.(eot|jpe?g|png|woff|woff2|eot|ttf|gif|svg)(\?\S*)?$/, loader: 'url?limit=100000&name=[name].[ext]'}
 		]
 	},
 	resolve: {
