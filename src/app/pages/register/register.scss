@@ -3,16 +3,18 @@
     -webkit-box-shadow: 5px 5px 50px 5px rgba(0,0,0,.1);
     box-shadow: 5px 5px 50px 5px rgba(0,0,0,.1);
     border: none;
-    border-radius: 2px;
-    display: block;
-    margin: auto;
-    position: relative;
-    border: none;
-    border-radius: 2px;
+    border-radius: 5px;
     display: block;
     margin: 0 auto;
+    padding: 20px;
     width: 30%;
 }
 .btn-submit {
     background: #fff;
+    border: 1px solid #073;
+    width: 100%;
+}
+
+.help-block {
+    font-size: 1.2rem;
 }
