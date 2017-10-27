@@ -1,3 +1,33 @@
+@media only screen 
+    and (min-width: 320px)
+    and (max-width: 480px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+        .register-container {
+            margin: 30px;
+            width: 80%;
+        }
+    }
+
+@media only screen 
+    and (min-width: 768px)
+    and (max-width: 1024px)
+    and (-webkit-min-device-pixel-ratio: 1) {
+        .register-container {
+            margin: 75px 135px;
+            width: 65%;
+        }
+    }
+
+@media only screen 
+    and (min-width: 1200px)
+    and (max-width: 1600px)
+    and (-webkit-min-device-pixel-ratio: 1) {
+        .register-container {
+            margin: 50px auto;
+            width: 40%;
+        }
+    }
+
 .register-container {
     background: rgba(255, 255, 255, .4);
     -webkit-box-shadow: 5px 5px 50px 5px rgba(0,0,0,.1);
@@ -5,30 +35,54 @@
     border: none;
     border-radius: 5px;
     display: block;
-    margin: 50px auto;
+    margin: 75px auto;
     padding: 20px;
     max-width: 500px;
 }
+.okayText, .okay label {
+    color: #ffffff;
+}
+.okayText a {
+    color: #092756;
+}
+
+.okay label {
+    font-size: 1.625rem;
+}
+
 .btn-submit {
     background: none;
     border: 2px solid #ffffff;
-    height: 40px;
+    color: #ffffff;
+    height: 50px;
     margin-bottom: 15px;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: .3s;
+    transition: .3s;
+    text-align: center;
+    text-transform: uppercase;
     width: 100%;
 }
+
 .btn-submit:hover {
-    background: none;
+    background: #ffffff;
     border: 2px solid #ffffff;
-    height: 40px;
+    color: #666666;
     margin-bottom: 15px;
     width: 100%;
 }
 
+/* Checkbox Overrides */
 .checkbox{
     margin-top: 0;
     margin-bottom: 30px;
 }
-
+.checkbox label {
+    color: #ffffff;
+    padding-left: 35px;
+    padding-top: 2px;
+}
 .check-control {
     cursor: pointer;
     display: block;
@@ -43,12 +97,48 @@
     z-index: -1;
 }
 .check-control__indicator {
-    background: #efefef;
+    background: #e6e6e6;
     height: 20px;
     left: 0;
     position: absolute;
     top: 2px;
     width: 20px;
+}
+.check-control:hover input ~ .check-control__indicator,
+.check-control input:focus ~ .check-control__indicator {
+	background: #cccccc;
+}
+.check-control input:checked ~ .check-control__indicator {
+	background: #3778b7;
+}
+.check-control:hover input:not([disabled]):checked ~ .check-control__indicator,
+.check-control input:checked:focus ~ .check-control__indicator {
+	background: #1f4468;
+}
+.check-control input:disabled ~ .check-control__indicator {
+	pointer-events: none;
+	opacity: .6;
+	background: #e6e6e6;
+}
+.check-control__indicator:after {
+	position: absolute;
+	display: none;
+	content: '';
+}
+.check-control input:checked ~ .check-control__indicator:after {
+	display: block;
+}
+.check-control--checkbox .check-control__indicator:after {
+	top: 5px;
+    left: 7px;
+    width: 5px;
+    height: 8px;
+    transform: rotate(45deg);
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+}
+.check-control--checkbox input:disabled ~ .check-control__indicator:after {
+	border-color: #7b7b7b;
 }
 
 .help-block {
