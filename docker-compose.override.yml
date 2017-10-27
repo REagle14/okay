@@ -1,0 +1,42 @@
+version: '3.3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    image: okay/web:latest
+    volumes:
+      - ./:/root/okay
+      - /root/okay/node_modules
+      - node_modules:/root/okay/node_modules
+    ports:
+      - 80:80
+    restart: always
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    command: ["npm", "run", "start-be-debug"]
+    image: okay/api:latest
+    volumes:
+      - ./:/root/okay
+      - node_modules:/root/okay/node_modules
+    ports:
+      - 8080:8080
+    restart: always
+    depends_on:
+      - web
+      - mongo
+  mongo:
+    image: mongo:latest
+    volumes:
+      - ./mongodb/db:/data/db/
+    expose:
+      - '27017'
+    ports:
+      - 27017:27017
+    restart: always
+
+volumes:
+  node_modules:

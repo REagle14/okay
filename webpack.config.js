@@ -10,12 +10,11 @@ module.exports = {
 	},
 	module: {
 		loaders: [
-			{ test: /\.js$/, exclude: /(node_modules)/, loader: 'babel-loader' },
+			{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
 			{ test: /\.css$/, loaders: ['style-loader', 'css-loader'], minimize: false },
 			{ test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'] },
 			{ test: /\.html$/, loader: 'html', query: { minimize: false } },
 			{ test: /\.json$/, loaders: ['json-loader'] },
-			// { test: /\.(eot|jpe?g|png|woff|woff2|eot|ttf|gif|svg)(\?v=[0-9]\.[0-9]\.[0-9])$/, loader: 'url-loader' },
 			{ test: /\.(eot|jpe?g|png|woff|woff2|eot|ttf|gif|svg)?(\?\S*)?$/, loader: 'url?limit=100000&name=[name].[ext]'}
 		]
 	},
