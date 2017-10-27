@@ -1,8 +1,10 @@
+import Dashboard from './dashboard/dashboard';
 import Register from './register/register';
 import Login from './login/login';
 
 let pagesModule = angular.module('app.pages', [
-    Register,
+	Register,
+	Dashboard,
     Login
 ])
     .name;
