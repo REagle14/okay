@@ -54,6 +54,7 @@
     background: none;
     border: 2px solid #ffffff;
     color: #ffffff;
+    font-size: 2rem;
     height: 50px;
     margin-bottom: 15px;
     overflow: hidden;
@@ -71,6 +72,11 @@
     color: #666666;
     margin-bottom: 15px;
     width: 100%;
+}
+
+.help-block {
+    color: #fff;
+    font-size: 1.2rem;
 }
 
 /* Checkbox Overrides */
@@ -98,6 +104,7 @@
 }
 .check-control__indicator {
     background: #e6e6e6;
+    border-radius: 2px;
     height: 20px;
     left: 0;
     position: absolute;
@@ -139,9 +146,4 @@
 }
 .check-control--checkbox input:disabled ~ .check-control__indicator:after {
 	border-color: #7b7b7b;
-}
-
-.help-block {
-    color: #fff;
-    font-size: 1.2rem;
 }
