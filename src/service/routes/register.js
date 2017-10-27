@@ -8,11 +8,12 @@ router.post('/rest/register', function (req, res, next) {
     User.find().exec(function (error, data) {
         if (!data.length) {
             if (req.body.email &&
-                req.body.name &&
+				req.body.firstName &&
+				req.body.lastName &&
                 req.body.username &&
                 req.body.password &&
                 req.body.confirmPassword) {
-
+					console.log(`**** ${req.body.password} ${req.body.confirmPassword}`);
                 // confirm that user typed same password twice
                 if (req.body.password !== req.body.confirmPassword) {
                     var err = new Error('Passwords do not match.');
@@ -23,7 +24,7 @@ router.post('/rest/register', function (req, res, next) {
                 // create object with form input
                 var userData = {
                     email: req.body.email,
-                    name: req.body.name,
+                    name: req.body.firstName + ' ' + req.body.lastName,
                     username: req.body.username,
                     password: req.body.password,
                     role: 'admin'
@@ -54,7 +55,8 @@ router.post('/rest/register', function (req, res, next) {
                             });
                         } else {
                             if (req.body.email &&
-                                req.body.name &&
+								req.body.firstName &&
+								req.body.lastName &&
                                 req.body.username &&
                                 req.body.password &&
                                 req.body.confirmPassword) {
@@ -69,7 +71,7 @@ router.post('/rest/register', function (req, res, next) {
                                 // create object with form input
                                 var userData = {
                                     email: req.body.email,
-                                    name: req.body.name,
+                                    name: req.body.firstName + ' ' + req.body.lastName,
                                     username: req.body.username,
                                     password: req.body.password,
                                     role: 'user'
