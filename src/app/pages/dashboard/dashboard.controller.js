@@ -22,7 +22,19 @@ class dashboardController {
         this.$scope.$on('$viewContentLoaded', () => { 
             this.model = this.userService.user;
         });
-    }
+	}
+	
+	logout () {
+		this.$http({
+            method: 'get',
+            url: '/rest/logout',
+            data: this.model,
+        }).then(function successCallback(response) {
+            this.$state.go('login');
+        }.bind(this), function errorCallback(response) {
+            console.log('error');
+        });
+	}
 }
 
 dashboardController.$inject = ['$scope', '$http', '$state', 'userService'];
